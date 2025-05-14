@@ -1,0 +1,1492 @@
+{
+    "type": "FeatureCollection",
+    "generator": "overpass-turbo",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "timestamp": "2024-12-09T18:02:10Z",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/1666931592",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5748793,
+                    -6.8829441
+                ]
+            },
+            "id": "node/1666931592"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/2490686820",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5996685,
+                    -6.9071703
+                ]
+            },
+            "id": "node/2490686820"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/2493385793",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6436996,
+                    -6.9304101
+                ]
+            },
+            "id": "node/2493385793"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/2494655269",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6259971,
+                    -6.930048
+                ]
+            },
+            "id": "node/2494655269"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3426583581",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6956572,
+                    -6.9135994
+                ]
+            },
+            "id": "node/3426583581"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3426586142",
+                "addr:street": "Jalan A.H Nasution",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6665883,
+                    -6.9039978
+                ]
+            },
+            "id": "node/3426586142"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3426586143",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6811244,
+                    -6.9050372
+                ]
+            },
+            "id": "node/3426586143"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3426586144",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6896145,
+                    -6.9103331
+                ]
+            },
+            "id": "node/3426586144"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3426591336",
+                "name": "Alfamart",
+                "shop": "supermarket",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.7389737,
+                    -6.9393614
+                ]
+            },
+            "id": "node/3426591336"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3426591337",
+                "name": "Alfamart",
+                "shop": "supermarket",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.7496124,
+                    -6.9394738
+                ]
+            },
+            "id": "node/3426591337"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3428136630",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6309069,
+                    -6.9194181
+                ]
+            },
+            "id": "node/3428136630"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3428137125",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6286091,
+                    -6.9246699
+                ]
+            },
+            "id": "node/3428137125"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3428137126",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6212111,
+                    -6.9226793
+                ]
+            },
+            "id": "node/3428137126"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3428137195",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6296803,
+                    -6.9224797
+                ]
+            },
+            "id": "node/3428137195"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3806721274",
+                "addr:city": "Bandung",
+                "addr:full": "Jalan Ir. H. Djuanda No. 297",
+                "branch": "Dago",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "source": "S2City_POI_2022",
+                "wheelchair": "no",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6164803,
+                    -6.8799394
+                ]
+            },
+            "id": "node/3806721274"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3807746622",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6208714,
+                    -6.8676273
+                ]
+            },
+            "id": "node/3807746622"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/3817206577",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6153555,
+                    -6.9193276
+                ]
+            },
+            "id": "node/3817206577"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4081103090",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "phone": "+62 81585463549",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5962662,
+                    -6.9013861
+                ]
+            },
+            "id": "node/4081103090"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4143026600",
+                "addr:street": "Jalan Ibrahim Adji",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6418368,
+                    -6.9442814
+                ]
+            },
+            "id": "node/4143026600"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4143027491",
+                "addr:street": "Jalan Raya Kawaluyaan",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6578288,
+                    -6.9367946
+                ]
+            },
+            "id": "node/4143027491"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4143027492",
+                "addr:street": "Jalan Terusan Jakarta",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6613256,
+                    -6.9140956
+                ]
+            },
+            "id": "node/4143027492"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4143033512",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6543632,
+                    -6.9383132
+                ]
+            },
+            "id": "node/4143033512"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4143042089",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "name": "Alfamart",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6816132,
+                    -6.9439088
+                ]
+            },
+            "id": "node/4143042089"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4143042092",
+                "addr:street": "Jalan Terusan Jakarta",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.645688,
+                    -6.9136745
+                ]
+            },
+            "id": "node/4143042092"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4143046690",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.654629,
+                    -6.9311681
+                ]
+            },
+            "id": "node/4143046690"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4143046691",
+                "addr:street": "Jalan Terusan Jakarta",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.667429,
+                    -6.9155023
+                ]
+            },
+            "id": "node/4143046691"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4329546428",
+                "addr:city": "Bandung",
+                "addr:housenumber": "990",
+                "addr:street": "Jl. Sido Mukti , Sukaluyu",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6350318,
+                    -6.8926293
+                ]
+            },
+            "id": "node/4329546428"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4369948870",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5789579,
+                    -6.885798
+                ]
+            },
+            "id": "node/4369948870"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/4560221631",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "name:ja": "\u30a2\u30eb\u30d5\u30a1\u30de\u30fc\u30c8",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5984118,
+                    -6.9189372
+                ]
+            },
+            "id": "node/4560221631"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5080871148",
+                "addr:city": "Bandung",
+                "addr:housenumber": "20",
+                "addr:postcode": "40123",
+                "addr:street": "Jalan Jalaprang",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6310226,
+                    -6.8968026
+                ]
+            },
+            "id": "node/5080871148"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5182885390",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5972964,
+                    -6.8946148
+                ]
+            },
+            "id": "node/5182885390"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5183387272",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5907259,
+                    -6.8699917
+                ]
+            },
+            "id": "node/5183387272"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5188560701",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5931115,
+                    -6.9174309
+                ]
+            },
+            "id": "node/5188560701"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5188816074",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5926019,
+                    -6.8973456
+                ]
+            },
+            "id": "node/5188816074"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5219299224",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5786601,
+                    -6.9086424
+                ]
+            },
+            "id": "node/5219299224"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5380523798",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5732083,
+                    -6.8823059
+                ]
+            },
+            "id": "node/5380523798"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5380523801",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5763042,
+                    -6.8805684
+                ]
+            },
+            "id": "node/5380523801"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5558946617",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6062281,
+                    -6.9252169
+                ]
+            },
+            "id": "node/5558946617"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5561301322",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6042692,
+                    -6.8862383
+                ]
+            },
+            "id": "node/5561301322"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5561356705",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6040101,
+                    -6.8813648
+                ]
+            },
+            "id": "node/5561356705"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5564292948",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6093706,
+                    -6.9172911
+                ]
+            },
+            "id": "node/5564292948"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5564293981",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6082435,
+                    -6.9163529
+                ]
+            },
+            "id": "node/5564293981"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5810384058",
+                "name": "Alfamart",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.8297204,
+                    -6.966702
+                ]
+            },
+            "id": "node/5810384058"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5810389563",
+                "name": "Alfamart",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.7809353,
+                    -6.9582694
+                ]
+            },
+            "id": "node/5810389563"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5810390358",
+                "name": "Alfamart",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.7778526,
+                    -6.9572755
+                ]
+            },
+            "id": "node/5810390358"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5810471153",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.7071464,
+                    -6.9180822
+                ]
+            },
+            "id": "node/5810471153"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5810471155",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.678734,
+                    -6.9049888
+                ]
+            },
+            "id": "node/5810471155"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/5829065096",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6412393,
+                    -6.8997574
+                ]
+            },
+            "id": "node/5829065096"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/6175985736",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.634847,
+                    -6.9268563
+                ]
+            },
+            "id": "node/6175985736"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/6547614902",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "en:Alfamart",
+                "name": "Alfamart",
+                "shop": "supermarket",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.754136,
+                    -6.9434675
+                ]
+            },
+            "id": "node/6547614902"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/6593020149",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.61554,
+                    -6.9062627
+                ]
+            },
+            "id": "node/6593020149"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/6711696399",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5999506,
+                    -6.9123621
+                ]
+            },
+            "id": "node/6711696399"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/6728755882",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5952696,
+                    -6.8928984
+                ]
+            },
+            "id": "node/6728755882"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/6792614592",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.637711,
+                    -6.9098728
+                ]
+            },
+            "id": "node/6792614592"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/9749058214",
+                "addr:city": "Bandung",
+                "addr:full": "Jalan Raya Dago",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "source": "S2City_POI_2022",
+                "wheelchair": "no",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6209471,
+                    -6.8673646
+                ]
+            },
+            "id": "node/9749058214"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/9751915183",
+                "addr:city": "Bandung",
+                "addr:full": "Jalan K. H. Wahid Hasyim",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "source": "S2City_POI_2022",
+                "wheelchair": "no",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5943027,
+                    -6.9377575
+                ]
+            },
+            "id": "node/9751915183"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/9756600386",
+                "addr:city": "Bandung",
+                "addr:full": "Jalan Dipatiukur",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "source": "S2City_POI_2022",
+                "wheelchair": "limited",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6165327,
+                    -6.89064
+                ]
+            },
+            "id": "node/9756600386"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/9819594168",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5581093,
+                    -6.9298544
+                ]
+            },
+            "id": "node/9819594168"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/9933917642",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5970973,
+                    -6.8967563
+                ]
+            },
+            "id": "node/9933917642"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/11064684808",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "brand:wikipedia": "id:Alfamart",
+                "name": "Alfamart",
+                "name:en": "Alfamart",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6119189,
+                    -6.9233696
+                ]
+            },
+            "id": "node/11064684808"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/11181717955",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "level": "0",
+                "name": "Alfamart",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5946443,
+                    -6.9460508
+                ]
+            },
+            "id": "node/11181717955"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/11341347378",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "name": "Alfamart",
+                "shop": "convenience",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5289437,
+                    -7.0288069
+                ]
+            },
+            "id": "node/11341347378"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/11871915376",
+                "bus": "yes",
+                "highway": "bus_stop",
+                "name": "Alfamart SPBU Bojongsoang",
+                "public_transport": "platform",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6317025,
+                    -6.9913884
+                ]
+            },
+            "id": "node/11871915376"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/11989220935",
+                "amenity": "toilets",
+                "name": "Toilet Alfamart",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6125408,
+                    -6.9345718
+                ]
+            },
+            "id": "node/11989220935"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/11989409642",
+                "amenity": "toilets",
+                "name": "Toilet Alfamart",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6157255,
+                    -6.9305413
+                ]
+            },
+            "id": "node/11989409642"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/11989782666",
+                "amenity": "toilets",
+                "name": "Toilet Alfamart",
+                "has_parking_attendant": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6239676,
+                    -6.938568
+                ]
+            },
+            "id": "node/11989782666"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/11990056556",
+                "brand": "Alfamart",
+                "brand:wikidata": "Q23745600",
+                "name": "Alfamart",
+                "shop": "convenience",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6726443,
+                    -6.9086636
+                ]
+            },
+            "id": "node/11990056556"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/11991400585",
+                "amenity": "toilets",
+                "name": "Toilet Alfamart",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.6037139,
+                    -6.8979245
+                ]
+            },
+            "id": "node/11991400585"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "@id": "node/12062389983",
+                "name": "Alfamart",
+                "shop": "supermarket",
+                "has_parking_attendant": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.5958516,
+                    -6.9003598
+                ]
+            },
+            "id": "node/12062389983"
+        }
+    ]
+}
