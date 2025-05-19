@@ -1,13 +1,10 @@
-// Inisialisasi peta Jakarta
-// ========================
-
 // Batas wilayah Jakarta
 var jakartaBounds = L.latLngBounds(
     L.latLng(-6.3950, 106.6890),  // southWest
     L.latLng(-5.9550, 107.0885)   // northEast
 );
 
-// Inisialisasi peta dengan konfigurasi Jakarta
+// Inisialisasi peta
 var peta = L.map('map', {
     center: [-6.2146, 106.8451], // Pusat Jakarta
     zoom: 11
@@ -21,6 +18,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Layer Group untuk marker
 var indomaretLayer = L.layerGroup().addTo(peta);
 var alfamartLayer = L.layerGroup().addTo(peta);
+
+// Variabel data gabungan
+var combinedData;
 
 // Fungsi pengecekan lokasi di Jakarta
 function isWithinJakarta(lat, lon) {
@@ -36,61 +36,63 @@ document.getElementById('locate-button').addEventListener('click', function() {
 
     navigator.geolocation.getCurrentPosition(
         function(position) {
-            var userLat = position.coords.latitude;
-            var userLon = position.coords.longitude;
+            try {
+                var userLat = position.coords.latitude;
+                var userLon = position.coords.longitude;
 
-            if (!isWithinJakarta(userLat, userLon)) {
-                alert("Anda berada di luar Jakarta!");
-                return;
+                if (!isWithinJakarta(userLat, userLon)) {
+                    alert("Anda berada di luar Jakarta!");
+                    return;
+                }
+
+                // Tambahkan marker lokasi pengguna
+                L.marker([userLat, userLon])
+                    .addTo(peta)
+                    .bindPopup("Lokasi Anda")
+                    .openPopup();
+
+                // Cari toko terdekat
+                findNearbyStores(userLat, userLon);
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Terjadi kesalahan saat memproses lokasi.");
             }
-
-            L.marker([userLat, userLon])
-                .addTo(peta)
-                .bindPopup("Lokasi Anda")
-                .openPopup();
-
-            findNearbyIndomarets(userLat, userLon);
-            findNearbyAlfamarts(userLat, userLon);
         },
         function(error) {
             alert("Gagal mendapatkan lokasi. Pastikan izin lokasi diaktifkan.");
-            console.error(error);
         }
     );
 });
 
-// Fungsi pencarian supermarket terdekat
-function findNearbyIndomarets(userLat, userLon) {
-    processSupermarketData(userLat, userLon, indomaretData, indomaretLayer, 'Indomaret');
+// Fungsi pencarian toko terdekat
+function findNearbyStores(userLat, userLon) {
+    processStoreData(userLat, userLon, 'Indomaret', indomaretLayer);
+    processStoreData(userLat, userLon, 'Alfamart', alfamartLayer);
 }
 
-function findNearbyAlfamarts(userLat, userLon) {
-    processSupermarketData(userLat, userLon, alfamartData, alfamartLayer, 'Alfamart');
-}
-
-function processSupermarketData(userLat, userLon, data, layer, brand) {
+function processStoreData(userLat, userLon, brand, layer) {
     var radius = 2;
     var found = false;
 
-    data.features.forEach(function(feature) {
-        var [lon, lat] = feature.geometry.coordinates;
+    combinedData.features
+        .filter(feature => feature.properties.brand === brand)
+        .forEach(feature => {
+            var [lon, lat] = feature.geometry.coordinates;
+            var distance = calculateDistance(userLat, userLon, lat, lon);
 
-        if (!isWithinJakarta(lat, lon)) return;
-
-        var distance = calculateDistance(userLat, userLon, lat, lon);
-        if (distance <= radius) {
-            addMarker(feature, layer, distance, brand);
-            found = true;
-        }
-    });
+            if (distance <= radius && isWithinJakarta(lat, lon)) {
+                addMarker(feature, layer, distance);
+                found = true;
+            }
+        });
 
     if (!found) alert(`Tidak ada ${brand} dalam radius 2 km.`);
 }
 
 // Fungsi pembantu
-function addMarker(feature, layer, distance, brand) {
+function addMarker(feature, layer, distance) {
     var [lon, lat] = feature.geometry.coordinates;
-    var name = feature.properties.name || brand;
+    var name = feature.properties.name || feature.properties.brand;
     var parking = feature.properties.has_parking_attendant ? "Ada tukang parkir" : "Tidak ada tukang parkir";
 
     L.marker([lat, lon])
@@ -123,24 +125,20 @@ var searchControl = L.Control.extend({
 
         L.DomEvent.on(button, 'click', () => {
             var query = input.value.toLowerCase();
-            var results = [];
-
-            [indomaretData, alfamartData].forEach(data => {
-                data.features.forEach(feature => {
-                    var [lon, lat] = feature.geometry.coordinates;
-                    var name = feature.properties.name?.toLowerCase();
-                    if (name?.includes(query) && isWithinJakarta(lat, lon)) {
-                        results.push(feature);
-                    }
-                });
+            var results = combinedData.features.filter(feature => {
+                var name = feature.properties.name?.toLowerCase();
+                var [lon, lat] = feature.geometry.coordinates;
+                return name?.includes(query) && isWithinJakarta(lat, lon);
             });
 
             if (results.length > 0) {
                 indomaretLayer.clearLayers();
                 alfamartLayer.clearLayers();
                 results.forEach(feature => {
-                    var layer = feature.properties.brand === 'Indomaret' ? indomaretLayer : alfamartLayer;
-                    addMarker(feature, layer, 0, feature.properties.brand);
+                    var layer = feature.properties.brand === 'Indomaret'
+                        ? indomaretLayer
+                        : alfamartLayer;
+                    addMarker(feature, layer, 0);
                 });
             } else {
                 alert("Lokasi tidak ditemukan!");
@@ -154,29 +152,21 @@ var searchControl = L.Control.extend({
 });
 
 // Load GeoJSON Data
-var indomaretData, alfamartData;
-
-fetch('Indomaret.geojson')
+fetch('indo_alfa.geojson')
     .then(res => res.json())
     .then(data => {
-        indomaretData = data;
-        data.features.forEach(f => {
-            var [lon, lat] = f.geometry.coordinates;
-            if (isWithinJakarta(lat, lon)) addMarker(f, indomaretLayer, 0, 'Indomaret');
+        combinedData = data;
+        data.features.forEach(feature => {
+            var layer = feature.properties.brand === 'Indomaret'
+                ? indomaretLayer
+                : alfamartLayer;
+            addMarker(feature, layer, 0);
         });
-    });
+    })
+    .catch(error => console.error('Error loading data:', error));
 
-fetch('Alfamart.geojson')
-    .then(res => res.json())
-    .then(data => {
-        alfamartData = data;
-        data.features.forEach(f => {
-            var [lon, lat] = f.geometry.coordinates;
-            if (isWithinJakarta(lat, lon)) addMarker(f, alfamartLayer, 0, 'Alfamart');
-        });
-    });
-
-// Kontrol Layer
+// Tambahkan kontrol ke peta
+peta.addControl(new searchControl({ position: 'topleft' }));
 L.control.layers(null, {
     "Indomaret": indomaretLayer,
     "Alfamart": alfamartLayer
