@@ -12,14 +12,4 @@ class SupermarketController extends Controller
         $supermarkets = Supermarket::all();
         return view('map', compact('supermarkets'));
     }
-
-    public function report(Request $request, $id)
-    {
-        $supermarket = Supermarket::findOrFail($id);
-        $supermarket->reports()->create([
-            'user_id' => auth()->id(),
-            'message' => $request->message,
-        ]);
-        return back()->with('success', 'Report submitted successfully!');
-    }
 }

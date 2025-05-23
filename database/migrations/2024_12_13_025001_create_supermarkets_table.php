@@ -12,7 +12,12 @@ return new class extends Migration {
     {
         Schema::create('supermarkets', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('external_id')->unique();
+            $table->string('name')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('operator')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('branch')->nullable();
             $table->decimal('latitude', 10, 8);
             $table->decimal('longitude', 11, 8);
             $table->boolean('has_parking_attendant')->default(false);

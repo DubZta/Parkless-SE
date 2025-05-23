@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewController;
 
 Route::get('/', function () {
     return view('index');
@@ -9,6 +10,8 @@ Route::get('/', function () {
 Route::get('/map', function () {
     return view('map');
 })->name('map');
+
+Route::get('/review/{id}', [ReviewController::class, 'show']);
 
 Route::get('/parkless-login', function () {
     return view('auth.parklessLogin');

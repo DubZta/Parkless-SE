@@ -69,4 +69,15 @@ class ReviewController extends Controller
 
         return redirect()->back()->with('success', 'Ulasan berhasil dihapus');
     }
+
+    public function show($id) {
+        $supermarket = Supermarket::where('external_id', $id)->firstOrFail();
+
+        $reviews = Review::where('supermarket_id', $supermarket->id)->with('user')->get();
+
+        return view('supermarket',[
+            'reviews' => $reviews,
+            'supermarket' => $supermarket
+        ]);
+    }
 }
