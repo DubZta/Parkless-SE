@@ -16,6 +16,7 @@ class ReviewSeeder extends Seeder
     {
         $supermarketExternalIds = [
             1977593425,
+            1977593425,
             6929354836,
             6941632282,
             7173963008,
@@ -25,11 +26,9 @@ class ReviewSeeder extends Seeder
             $supermarket = Supermarket::where('external_id', $externalId)->first();
 
             Review::create([
-                'user_id' => 1,
+                'user_id' => fake()->numberBetween(1, 2),
                 'supermarket_id' => $supermarket->id,
                 'content' => fake()->sentence(),
-                'upvotes' => fake()->numberBetween(0, 100),
-                'downvotes' => fake()->numberBetween(0, 20),
             ]);
         }
     }

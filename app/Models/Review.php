@@ -20,4 +20,18 @@ class Review extends Model
     {
         return $this->belongsTo(Supermarket::class);
     }
+
+    public function voters() {
+        return $this->belongsToMany(User::class, 'review_votes')
+                    ->withPivot('vote')
+                    ->withTimestamps();
+    }
+
+    public function upvotesCount() {
+        return $this->voters()->wherePivot('vote', 1)->count();
+    }
+
+    public function downvotesCount() {
+        return $this->voters()->wherePivot('vote', -1)->count();
+    }
 }

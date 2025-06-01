@@ -13,6 +13,8 @@ Route::get('/map', function () {
 
 Route::get('/review/{id}', [ReviewController::class, 'show']);
 
+Route::post('/review/{reviewId}/vote', [ReviewController::class, 'vote']);
+
 Route::get('/parkless-login', function () {
     return view('auth.parklessLogin');
 })->name('parklessLogin');

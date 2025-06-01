@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container my-4">
+        {{-- <a href="/map" class="btn btn-info mb-4">Back to Map</a> --}}
         <h2 class="mb-3">Detail Supermarket</h2>
         <div class="card mb-4">
             <div class="card-body">
@@ -32,25 +33,35 @@
             </div>
         </div>
 
-        <h3>Review</h3>
+        <div class="w-75 mx-auto my-5">
         @forelse($reviews as $review)
             <div class="card mb-3">
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-1 text-muted">{{ $review->user->username }}</h6>
+                <div class="card-body w-100">
+                    <h5 class="card-subtitle mb-1 text-muted">{{ $review->user->username }}</h5>
                     <p class="card-text">{{ $review->content }}</p>
                     <div class="d-flex gap-3">
-                        <span class="badge bg-success">👍 {{ $review->upvotes }}</span>
-                        <span class="badge bg-danger">👎 {{ $review->downvotes }}</span>
+                        <form action="/review/{{$review->id}}/vote" method="POST" class="d-inline">
+                            @csrf
+                            <input type="hidden" name="vote" value="1">
+                            <button type="submit" class="btn btn-sm {{$hasVoted == 1 ? 'btn-success' : 'btn-outline-success'}}">👍 {{$review->upvotesCount()}}</button>
+                        </form>
+
+                        <form action="/review/{{$review->id}}/vote" method="POST" class="d-inline">
+                            @csrf
+                            <input type="hidden" name="vote" value="-1">
+                            <button type="submit" class="btn btn-sm {{$hasVoted == -1 ? 'btn-danger' : 'btn-outline-danger'}}">👎 {{$review->downvotesCount()}}</button>
+                        </form>
                     </div>
                 </div>
             </div>
         @empty
             <div class="alert alert-info">Belum ada review.</div>
         @endforelse
+        </div>
 
         {{-- @auth --}}
-            <div class="card mt-4">
-                <div class="card-body">
+            <div class="card mt-4 w-75 mx-auto">
+                <div class="card-body w-100">
                     <h5 class="card-title">Tulis Review</h5>
                     <form method="POST" action="">
                         @csrf
@@ -58,7 +69,9 @@
                         <div class="mb-3">
                             <textarea name="review" class="form-control" rows="3" placeholder="Tulis review..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Kirim</button>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary">Kirim</button>
+                        </div>
                     </form>
                 </div>
             </div>

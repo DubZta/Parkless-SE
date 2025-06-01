@@ -39,21 +39,21 @@ class ReviewController extends Controller
     }
 
     // Voting ulasan
-    public function vote(Request $request, $id)
-    {
-        $review = Review::findOrFail($id);
-        $voteType = $request->input('vote_type');
+    // public function vote(Request $request, $id)
+    // {
+    //     $review = Review::findOrFail($id);
+    //     $voteType = $request->input('vote_type');
 
-        if ($voteType === 'upvote') {
-            $review->upvotes++;
-        } elseif ($voteType === 'downvote') {
-            $review->downvotes++;
-        }
+    //     if ($voteType === 'upvote') {
+    //         $review->upvotes++;
+    //     } elseif ($voteType === 'downvote') {
+    //         $review->downvotes++;
+    //     }
 
-        $review->save();
+    //     $review->save();
 
-        return redirect()->back()->with('success', 'Vote berhasil');
-    }
+    //     return redirect()->back()->with('success', 'Vote berhasil');
+    // }
 
     // Menghapus ulasan (hanya oleh pemilik ulasan)
     public function destroy($id)
@@ -74,10 +74,31 @@ class ReviewController extends Controller
         $supermarket = Supermarket::where('external_id', $id)->firstOrFail();
 
         $reviews = Review::where('supermarket_id', $supermarket->id)->with('user')->get();
+        $hasVoted = 0;
+        foreach($reviews as $review) {
+            $voted = $review->voters()->where('user_id', 1)->first()?->pivot;
+            $hasVoted = $voted->vote ?? 0;
+        }
 
         return view('supermarket',[
             'reviews' => $reviews,
-            'supermarket' => $supermarket
+            'supermarket' => $supermarket,
+            'hasVoted' => $hasVoted
         ]);
     }
+
+    public function vote(Request $request, $reviewId) {
+        $userId = 1;
+
+        $voteValue = $request->input('vote');
+
+        $review = Review::findOrFail($reviewId);
+
+        $review->voters()->syncWithoutDetaching([
+            $userId => ['vote' => $voteValue]
+        ]);
+
+        return redirect()->back();
+    }
+
 }
