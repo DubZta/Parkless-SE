@@ -9,15 +9,20 @@ class Supermarket extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'latitude', 'longitude', 'has_parking_attendant'];
+    protected $fillable = [
+        'external_id',
+        'name',
+        'brand',
+        'operator',
+        'branch',
+        'phone',
+        'latitude',
+        'longitude',
+        'has_parking_attendant',
+    ];
 
     public function reviews()
     {
         return $this->hasMany(Review::class);
-    }
-
-    public function reports()
-    {
-        return $this->hasMany(Report::class);
     }
 }

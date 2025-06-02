@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\ReviewController;
 
 Route::get('/', function () {
     return view('index');
@@ -15,6 +16,9 @@ Route::get('/map', function () {
 
 Route::get('/parkless-login', [AuthenticatedSessionController::class, 'create'])->name('parklessLogin');
 Route::post('/parkless-login', [AuthenticatedSessionController::class, 'store']);
+Route::get('/review/{id}', [ReviewController::class, 'show']);
+Route::post('/review', [ReviewController::class, 'store']);
+Route::post('/review/{reviewId}/vote', [ReviewController::class, 'vote']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {

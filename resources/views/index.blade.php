@@ -90,7 +90,7 @@
 
                 <nav>
                     <ul>
-                        <li><a href="#intro">About Us</a></li>
+                        <li><a href="#intro">test</a></li>
                         <li><a href="#work">Features</a></li>
                         <li><a href="#about">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -180,7 +180,7 @@
 
             <!-- Footer -->
             <footer id="footer">
-                <p class="copyright">&copy; Software Engineering Project by Kelompok 7</a></p>
+                <p class="copyright">&copy; Software Engineering Project By Group 7</a></p>
             </footer>
 
         </div>
