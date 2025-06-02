@@ -9,7 +9,16 @@ class Review extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'supermarket_id', 'content', 'upvotes', 'downvotes'];
+    protected $fillable = ['user_id', 'supermarket_id', 'content', 'parent_id'];
+
+    public function parent() {
+        return $this->belongsTo(Review::class, 'parent_id');
+    }
+
+    public function replies() {
+        return $this->hasMany(Review::class, 'parent_id');
+    }
+
 
     public function user()
     {

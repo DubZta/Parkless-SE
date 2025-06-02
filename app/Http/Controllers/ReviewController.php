@@ -93,7 +93,8 @@ class ReviewController extends Controller
         Review::create([
             'user_id' => $userId,
             'supermarket_id' => $request['supermarket_id'],
-            'content' => $request['content']
+            'content' => $request['content'],
+            'parent_id' => $request['parent_id']
         ]);
 
          return redirect()->back()->with('success', 'Review berhasil dibuat!');

@@ -46,8 +46,9 @@
                         <form action="/review" method="POST">
                             @csrf
                             <input type="hidden" name="supermarket_id" value="{{ $supermarket->id }}">
+                            <input type="hidden" name="parent_id" id="parent_id">
                             <div class="mb-2">
-                                <textarea name="content" rows="4" class="form-control" placeholder="Tulis ulasan kamu..."></textarea>
+                                <textarea name="content" id="content" rows="4" class="form-control" placeholder="Tulis ulasan kamu..."></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary">Kirim Review</button>
@@ -63,22 +64,62 @@
                     <div class="card-body">
                         <h5 class="card-title">Review Pengguna</h5>
                         @foreach ($reviews as $review)
-                            @php $myVote = $votes[$review->id] ?? 0; @endphp
-                            <div class="border-bottom pb-2 mb-2">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <strong>{{ $review->user->username }}</strong>
+                            @if(!$review->parent_id)
+                            @php $vote_parent = $votes[$review->id] ?? 0; @endphp
+                            <div class="border-bottom p-2 mb-2">
+                                <strong>{{ $review->user->username }}</strong>
+                                <p class="mb-0">{{ $review->content }}</p>
+                                <div class="d-flex w-100 justify-content-between align-items-center">
+                                    <div class="d-flex gap-4 fs-6 text-secondary align-items-center">
+                                        <span>{{$review->created_at->diffForHumans()}}</span>
+                                        <button class="btn btn-sm fw-medium fs-6" onclick="reply({{ $review->id }}, '{{$review->user->username}}')">Balas</button>
+                                    </div>
                                     <form method="POST" action="/review/{{ $review->id }}/vote" class="d-flex gap-2">
                                         @csrf
-                                        <button name="vote" value="1" class="btn btn-sm {{ $myVote === 1 ? 'btn-success' : 'btn-secondary' }}">
+                                        <button name="vote" value="1" class="btn btn-sm {{ $vote_parent === 1 ? 'btn-success' : 'btn-secondary' }}">
                                             👍 {{ $review->upvotesCount() }}
                                         </button>
-                                        <button name="vote" value="-1" class="btn btn-sm {{ $myVote === -1 ? 'btn-danger' : 'btn-secondary' }}">
+                                        <button name="vote" value="-1" class="btn btn-sm {{ $vote_parent === -1 ? 'btn-danger' : 'btn-secondary' }}">
                                             👎 {{ $review->downvotesCount() }}
                                         </button>
                                     </form>
                                 </div>
-                                <p class="mb-0">{{ $review->content }}</p>
                             </div>
+                            @endif
+                        @php
+                            $r = $review->replies;
+                            $replyCount = $r->count();
+                        @endphp
+
+                        @if($replyCount)
+                            <button class="btn btn-sm text-primary mb-2"
+                                onclick="toggleReplies({{ $review->id }})"
+                                id="toggle-btn-{{ $review->id }}">
+                                Lihat balasan ({{ $replyCount }})
+                            </button>
+                            <div class="ms-4 border-start ps-2 mt-1 d-none" id="replies-{{ $review->id }}">
+                                @foreach ($r as $reply)
+                                    <div class="mb-2">
+                                        <div class="d-flex justify-content-between">
+                                            <strong>{{ $reply->user->username }}</strong>
+                                            <div class="d-flex">
+                                                <form method="POST" action="/review/{{ $reply->id }}/vote" class="d-flex gap-2">
+                                                    @csrf
+                                                    @php $vote_reply = $votes[$reply->id] @endphp
+                                                    <button name="vote" value="1" class="btn btn-sm {{ $vote_reply === 1 ? 'btn-success' : 'btn-secondary' }}">
+                                                        👍 {{ $reply->upvotesCount() }}
+                                                    </button>
+                                                    <button name="vote" value="-1" class="btn btn-sm {{ $vote_reply === -1 ? 'btn-danger' : 'btn-secondary' }}">
+                                                        👎 {{ $reply->downvotesCount() }}
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <p class="mb-1">{{ $reply->content }}</p>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
                         @endforeach
                     </div>
                 </div>
@@ -133,6 +174,29 @@
         @endauth --}}
     </div>
 
+    <script>
+         function toggleReplies(reviewId) {
+            const repliesDiv = document.getElementById('replies-' + reviewId);
+            const toggleBtn = document.getElementById('toggle-btn-' + reviewId);
+
+            if (repliesDiv.classList.contains('d-none')) {
+                repliesDiv.classList.remove('d-none');
+                toggleBtn.textContent = 'Sembunyikan balasan';
+            } else {
+                repliesDiv.classList.add('d-none');
+                toggleBtn.textContent = 'Lihat balasan (' + repliesDiv.children.length + ')';
+            }
+        }
+        function reply(reviewId, username) {
+            const input = document.getElementById('parent_id');
+            input.value = parseInt(reviewId);
+
+            const textarea = document.getElementById('content');
+            textarea.placeholder = 'Membalas @' + username;
+
+            textarea.focus();
+        }
+    </script>
     <!-- Bootstrap JS (optional if you need dropdowns, etc.) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
