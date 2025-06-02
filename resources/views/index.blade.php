@@ -15,14 +15,68 @@
 </head>
 
 <body class="is-preload">
+    @auth
+    <form method="POST" action="{{ route('logout') }}" style="position: fixed; top: 2rem; right: 2rem; z-index: 1000; display: inline;">
+        @csrf
+        <button type="submit" class="logout-btn-top-right button">Log Out</button>
+    </form>
+    @endauth
+    @guest
+    <form method="GET" action="{{ route('parklessLogin') }}" style="position: fixed; top: 2rem; right: 2rem; z-index: 1000; display: inline;">
+        <button type="submit" class="login-btn-top-right button">Login</button>
+    </form>
+    @endguest
+    <style>
+        .dashboard-btn-top-left {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            min-width: 120px;
+            border: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+            padding: 0 2rem;
+        }
+        .dashboard-btn-top-left:hover {
+            background: #fff;
+            color: #222;
+        }
+        .login-btn-top-right, .logout-btn-top-right {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            min-width: 120px;
+            border: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+            padding: 0 2rem;
+        }
+        .login-btn-top-right:hover, .logout-btn-top-right:hover {
+            background: rgba(255,255,255,0.075);
+            color: #fff;
+        }
+    </style>
 
     <!-- Wrapper -->
     <div id="content">
         <div id="wrapper">
 
-            <form id="loginuser" method="get" action="#">
-                <a href="{{ route('parklessLogin') }}" id="login-button" class="button">Login</a>
-            </form>
             <header id="header">
                 <div class="logo">
                     <a href="{{ route('map') }}"><span class="fa-solid fa-map-location-dot fa-2x"></span></a>
@@ -126,7 +180,7 @@
 
             <!-- Footer -->
             <footer id="footer">
-                <p class="copyright">&copy; Parkless PKM-KC OOP By Group 4</a></p>
+                <p class="copyright">&copy; Software Engineering Project by Kelompok 7</a></p>
             </footer>
 
         </div>
