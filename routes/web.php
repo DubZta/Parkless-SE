@@ -12,7 +12,7 @@ Route::get('/map', function () {
 })->name('map');
 
 Route::get('/review/{id}', [ReviewController::class, 'show']);
-
+Route::post('/review', [ReviewController::class, 'store']);
 Route::post('/review/{reviewId}/vote', [ReviewController::class, 'vote']);
 
 Route::get('/parkless-login', function () {

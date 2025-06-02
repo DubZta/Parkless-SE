@@ -33,6 +33,10 @@
             </div>
         </div>
 
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+
         <div class="w-75 mx-auto my-5">
         @forelse($reviews as $review)
             <div class="card mb-3">
@@ -43,13 +47,13 @@
                         <form action="/review/{{$review->id}}/vote" method="POST" class="d-inline">
                             @csrf
                             <input type="hidden" name="vote" value="1">
-                            <button type="submit" class="btn btn-sm {{$hasVoted == 1 ? 'btn-success' : 'btn-outline-success'}}">👍 {{$review->upvotesCount()}}</button>
+                            <button type="submit" class="btn btn-sm {{$votes[$review->id] == 1 ? 'btn-success' : 'btn-outline-success'}}">👍 {{$review->upvotesCount()}}</button>
                         </form>
 
                         <form action="/review/{{$review->id}}/vote" method="POST" class="d-inline">
                             @csrf
                             <input type="hidden" name="vote" value="-1">
-                            <button type="submit" class="btn btn-sm {{$hasVoted == -1 ? 'btn-danger' : 'btn-outline-danger'}}">👎 {{$review->downvotesCount()}}</button>
+                            <button type="submit" class="btn btn-sm {{$votes[$review->id] == -1 ? 'btn-danger' : 'btn-outline-danger'}}">👎 {{$review->downvotesCount()}}</button>
                         </form>
                     </div>
                 </div>
@@ -63,11 +67,11 @@
             <div class="card mt-4 w-75 mx-auto">
                 <div class="card-body w-100">
                     <h5 class="card-title">Tulis Review</h5>
-                    <form method="POST" action="">
+                    <form method="POST" action="/review">
                         @csrf
-                        <input type="hidden" name="place_id" value="{{ $supermarket->id }}">
+                        <input type="hidden" name="supermarket_id" value="{{ $supermarket->id }}">
                         <div class="mb-3">
-                            <textarea name="review" class="form-control" rows="3" placeholder="Tulis review..." required></textarea>
+                            <textarea name="content" class="form-control" rows="3" placeholder="Tulis review..." required></textarea>
                         </div>
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Kirim</button>
