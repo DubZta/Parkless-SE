@@ -50,10 +50,13 @@
                 <form action="{{ route('register') }}" method="POST" class="signup" style="display: none;">
                     @csrf
                     <div class="field">
-                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="text" name="name" placeholder="Name" required>
                     </div>
                     <div class="field">
-                        <input type="text" name="name" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="field">
+                        <input type="email" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="field">
                         <input type="password" name="password" placeholder="Password" required>
