@@ -37,7 +37,56 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
-        <div class="w-75 mx-auto my-5">
+        <div class="row mt-4">
+            {{-- Formulir Tulis Review --}}
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Tulis Review</h5>
+                        <form action="/review" method="POST">
+                            @csrf
+                            <input type="hidden" name="supermarket_id" value="{{ $supermarket->id }}">
+                            <div class="mb-2">
+                                <textarea name="content" rows="4" class="form-control" placeholder="Tulis ulasan kamu..."></textarea>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Kirim Review</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Daftar Review --}}
+            <div class="col-md-8">
+                <div class="card" style="max-height: 350px; overflow-y: auto;">
+                    <div class="card-body">
+                        <h5 class="card-title">Review Pengguna</h5>
+                        @foreach ($reviews as $review)
+                            @php $myVote = $votes[$review->id] ?? 0; @endphp
+                            <div class="border-bottom pb-2 mb-2">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <strong>{{ $review->user->username }}</strong>
+                                    <form method="POST" action="/review/{{ $review->id }}/vote" class="d-flex gap-2">
+                                        @csrf
+                                        <button name="vote" value="1" class="btn btn-sm {{ $myVote === 1 ? 'btn-success' : 'btn-secondary' }}">
+                                            👍 {{ $review->upvotesCount() }}
+                                        </button>
+                                        <button name="vote" value="-1" class="btn btn-sm {{ $myVote === -1 ? 'btn-danger' : 'btn-secondary' }}">
+                                            👎 {{ $review->downvotesCount() }}
+                                        </button>
+                                    </form>
+                                </div>
+                                <p class="mb-0">{{ $review->content }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{-- <div class="w-75 mx-auto my-5">
         @forelse($reviews as $review)
             <div class="card mb-3">
                 <div class="card-body w-100">
@@ -61,10 +110,10 @@
         @empty
             <div class="alert alert-info">Belum ada review.</div>
         @endforelse
-        </div>
+        </div> --}}
 
         {{-- @auth --}}
-            <div class="card mt-4 w-75 mx-auto">
+            {{-- <div class="card mt-4 w-75 mx-auto">
                 <div class="card-body w-100">
                     <h5 class="card-title">Tulis Review</h5>
                     <form method="POST" action="/review">
@@ -78,7 +127,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> --}}
         {{-- @else
             <p class="mt-3"><i>Login untuk menulis review.</i></p>
         @endauth --}}
