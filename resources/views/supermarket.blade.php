@@ -127,54 +127,11 @@
             </div>
         </div>
         @else
-            <p class="alert alert-success">Login untuk lihat dan tulis review</p>
+            <p class="alert alert-success">
+                <a href="/parkless-login" class="text-decoration-none">Login</a>
+                untuk lihat dan tulis review
+            </p>
         @endauth
-
-        {{-- <div class="w-75 mx-auto my-5">
-        @forelse($reviews as $review)
-            <div class="card mb-3">
-                <div class="card-body w-100">
-                    <h5 class="card-subtitle mb-1 text-muted">{{ $review->user->username }}</h5>
-                    <p class="card-text">{{ $review->content }}</p>
-                    <div class="d-flex gap-3">
-                        <form action="/review/{{$review->id}}/vote" method="POST" class="d-inline">
-                            @csrf
-                            <input type="hidden" name="vote" value="1">
-                            <button type="submit" class="btn btn-sm {{$votes[$review->id] == 1 ? 'btn-success' : 'btn-outline-success'}}">👍 {{$review->upvotesCount()}}</button>
-                        </form>
-
-                        <form action="/review/{{$review->id}}/vote" method="POST" class="d-inline">
-                            @csrf
-                            <input type="hidden" name="vote" value="-1">
-                            <button type="submit" class="btn btn-sm {{$votes[$review->id] == -1 ? 'btn-danger' : 'btn-outline-danger'}}">👎 {{$review->downvotesCount()}}</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        @empty
-            <div class="alert alert-info">Belum ada review.</div>
-        @endforelse
-        </div> --}}
-
-        {{-- @auth --}}
-            {{-- <div class="card mt-4 w-75 mx-auto">
-                <div class="card-body w-100">
-                    <h5 class="card-title">Tulis Review</h5>
-                    <form method="POST" action="/review">
-                        @csrf
-                        <input type="hidden" name="supermarket_id" value="{{ $supermarket->id }}">
-                        <div class="mb-3">
-                            <textarea name="content" class="form-control" rows="3" placeholder="Tulis review..." required></textarea>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary">Kirim</button>
-                        </div>
-                    </form>
-                </div>
-            </div> --}}
-        {{-- @else
-            <p class="mt-3"><i>Login untuk menulis review.</i></p>
-        @endauth --}}
     </div>
 
     <script>

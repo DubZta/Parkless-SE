@@ -46,6 +46,9 @@ class AuthController extends Controller
     // Menampilkan halaman registrasi
     public function showRegistrationForm()
     {
+        if(auth()->check()) {
+            return redirect('/');
+        }
         return view('auth.register');
     }
 

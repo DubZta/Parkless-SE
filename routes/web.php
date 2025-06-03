@@ -17,10 +17,11 @@ Route::get('/map', function () {
 Route::get('/parkless-login', [AuthenticatedSessionController::class, 'create'])->name('parklessLogin');
 Route::post('/parkless-login', [AuthenticatedSessionController::class, 'store']);
 Route::get('/review/{id}', [ReviewController::class, 'show']);
-Route::post('/review', [ReviewController::class, 'store']);
-Route::post('/review/{reviewId}/vote', [ReviewController::class, 'vote']);
 
 Route::middleware(['auth'])->group(function () {
+    Route::post('/review', [ReviewController::class, 'store']);
+    Route::post('/review/{reviewId}/vote', [ReviewController::class, 'vote']);
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -35,12 +36,12 @@ Route::get('/email/verify', function () {
 })->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
- 
+
     return redirect('/dashboard');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
- 
+
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 

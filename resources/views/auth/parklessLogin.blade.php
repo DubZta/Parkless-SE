@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    @guest
     <div class="wrapper">
         <div class="title-text">
             <div class="title login">Login Form</div>
@@ -95,6 +96,13 @@
         loginRadio.addEventListener('change', toggleForms);
         signupRadio.addEventListener('change', toggleForms);
     </script>
+    @endguest
+
+    @auth
+        <script>
+            window.location.href = "/";
+        </script>
+    @endauth
 </body>
 
 </html>
