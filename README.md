@@ -37,6 +37,7 @@ Follow these steps to set up and run the application locally:
 # 1. Clone the repository
 
 git clone https://github.com/DubZta/Parkless-SE.git
+
 cd Parkless-SE
 
 # 2. Install PHP dependencies
