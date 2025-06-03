@@ -49,21 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 .addTo(peta)
                 .bindPopup("Lokasi Anda")
                 .openPopup();
-
-            L.circle([userLat, userLon], {
-                radius: 2000,
-                color: "black",
-                opacity: 0.25,
-            }).addTo(peta);
         },
         function (error) {
-            console.error("Gagal mendapatkan lokasi:", error);
             alert("Tidak dapat mengakses lokasi Anda.");
         }
     );
 });
 
+let userMarker = null;
+let userCircle = null;
+let isFindNearMe = false;
+
 document.getElementById("locate-button").addEventListener("click", function () {
+    const button = this;
     if (!navigator.geolocation) {
         alert("Geolokasi tidak didukung oleh browser Anda.");
         return;
@@ -74,23 +72,54 @@ document.getElementById("locate-button").addEventListener("click", function () {
             try {
                 var userLat = position.coords.latitude;
                 var userLon = position.coords.longitude;
-                console.log(userLat, userLon);
 
                 if (!isWithinJakarta(userLat, userLon)) {
                     alert("Anda berada di luar Jakarta!");
                     return;
                 }
 
-                // Tambahkan marker lokasi pengguna
-                L.marker([userLat, userLon])
-                    .addTo(peta)
-                    .bindPopup("Lokasi Anda")
-                    .openPopup();
+                if (!isFindNearMe) {
+                    if (userMarker) userMarker.remove();
 
-                // Cari toko terdekat
-                findNearbyStores(userLat, userLon);
+                    if (userCircle) userCircle.remove();
+
+                    // Tambahkan marker lokasi pengguna
+                    userMarker = L.marker([userLat, userLon])
+                        .addTo(peta)
+                        .bindPopup("Lokasi Anda")
+                        .openPopup();
+
+                    userCircle = L.circle([userLat, userLon], {
+                        radius: 2000,
+                        color: "black",
+                        opacity: 0.25,
+                    }).addTo(peta);
+
+                    // Cari toko terdekat
+                    findNearbyStores(userLat, userLon);
+
+                    button.textContent = "Show All Supermarkets";
+                    isFindNearMe = true;
+                } else {
+                    indomaretLayer.clearLayers();
+                    alfamartLayer.clearLayers();
+
+                    processStoreData(
+                        userLat,
+                        userLon,
+                        "Indomaret",
+                        indomaretLayer
+                    );
+                    processStoreData(
+                        userLat,
+                        userLon,
+                        "Alfamart",
+                        indomaretLayer
+                    );
+                    button.textContent = "Find Supermarkets Near Me";
+                    isFindNearMe = false;
+                }
             } catch (error) {
-                console.error("Error:", error);
                 alert("Terjadi kesalahan saat memproses lokasi.");
             }
         },
@@ -102,23 +131,40 @@ document.getElementById("locate-button").addEventListener("click", function () {
 
 // Fungsi pencarian toko terdekat
 function findNearbyStores(userLat, userLon) {
+    const radius = 2;
+    let found = false;
     indomaretLayer.clearLayers();
     alfamartLayer.clearLayers();
-    processStoreData(userLat, userLon, "Indomaret", indomaretLayer);
-    processStoreData(userLat, userLon, "Alfamart", alfamartLayer);
+    processStoreData(userLat, userLon, "Indomaret", indomaretLayer, radius);
+    processStoreData(userLat, userLon, "Alfamart", alfamartLayer, radius);
 }
 
-function processStoreData(userLat, userLon, brand, layer) {
-    var radius = 2;
-    var found = false;
+function processStoreData(userLat, userLon, brand, layer, radius = -1) {
+    let found = false;
 
     combinedData.features
         .filter((feature) => feature.properties.brand === brand)
         .forEach((feature) => {
             var [lon, lat] = feature.geometry.coordinates;
-            var distance = calculateDistance(userLat, userLon, lat, lon);
+            const distance = calculateDistance(userLat, userLon, lat, lon);
 
-            if (distance <= radius && isWithinJakarta(lat, lon)) {
+            if (radius != -1) {
+                if (distance <= radius && isWithinJakarta(lat, lon)) {
+                    addMarker(feature, layer, distance);
+                    found = true;
+                }
+            } else {
+                if (userMarker) {
+                    userMarker.remove();
+                }
+
+                if (userCircle) {
+                    userCircle.remove();
+                }
+                const layer =
+                    feature.properties.brand === "Indomaret"
+                        ? indomaretLayer
+                        : alfamartLayer;
                 addMarker(feature, layer, distance);
                 found = true;
             }

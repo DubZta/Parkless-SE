@@ -133,6 +133,12 @@
                 <div class="alert alert-success">Login untuk lihat dan tulis review</div>
             @endauth
         </div>
+        @else
+            <p class="alert alert-success">
+                <a href="/parkless-login" class="text-decoration-none">Login</a>
+                untuk lihat dan tulis review
+            </p>
+        @endauth
     </div>
 
     <script>

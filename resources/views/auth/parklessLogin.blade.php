@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    @guest
     <div class="wrapper">
         <a href="{{ route('index') }}" class="back-to-home">
             <span class="back-arrow">←</span> Back to Home
@@ -116,6 +117,13 @@
         loginRadio.addEventListener('change', toggleForms);
         signupRadio.addEventListener('change', toggleForms);
     </script>
+    @endguest
+
+    @auth
+        <script>
+            window.location.href = "/";
+        </script>
+    @endauth
 </body>
 
 </html>
