@@ -47,10 +47,12 @@ composer install
 # 3. Copy environment file and generate app key
 
 cp .env.example .env
+
 php artisan key:generate
 
 # 4. Set up your database configuration in the .env file
-# (DB_DATABASE, DB_USERNAME, DB_PASSWORD)
+
+(DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 
 # 5. Run migrations and seeders
 
