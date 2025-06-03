@@ -21,6 +21,7 @@ Route::get('/review/{id}', [ReviewController::class, 'show']);
 Route::middleware(['auth'])->group(function () {
     Route::post('/review', [ReviewController::class, 'store']);
     Route::post('/review/{reviewId}/vote', [ReviewController::class, 'vote']);
+    Route::delete('/review/{id}', [ReviewController::class, 'destroy']);
 
     Route::get('/dashboard', function () {
         return view('dashboard');

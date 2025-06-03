@@ -45,6 +45,18 @@ class ReviewController extends Controller
          return redirect()->back()->with('success', 'Review berhasil dibuat!');
     }
 
+    public function destroy($id) {
+        $review = Review::findOrFail($id);
+
+        if(!auth()->user()->is_admin) {
+            abort(403, 'Unauthorized');
+        }
+
+        $review->delete();
+
+        return redirect()->back()->with('success', 'Review berhasil dihapus!');
+    }
+
     public function vote(Request $request, $reviewId) {
         $userId = auth()->id();
 

@@ -8,13 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <a href="{{ route('map') }}" class="back-link">
+        {{-- <a href="{{ route('map') }}" class="back-link">
             <span class="back-arrow">←</span> Back to Map
-        </a>
-        
+        </a> --}}
+
         <div class="wrapper">
             <h1 class="title">Detail Supermarket</h1>
-            
+
             <div class="detail-card">
                 <h2 class="subtitle">
                     {{ $supermarket->name }}
@@ -75,7 +75,16 @@
                             @if(!$review->parent_id)
                             @php $vote_parent = $votes[$review->id] ?? 0; @endphp
                             <div class="review-item">
-                                <div class="review-user">{{ $review->user->username }}</div>
+                                <div class="review-header">
+                                    <div class="review-user">{{ $review->user->username }}</div>
+                                    @if (auth()->user()->is_admin)
+                                        <form action="/review/{{ $review->id }}" method="POST" onsubmit="return confirm('Yakin ingin hapus review ini?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="delete-button">X</button>
+                                        </form>
+                                    @endif
+                                </div>
                                 <div class="review-content">{{ $review->content }}</div>
                                 <div class="review-actions">
                                     <div class="review-meta">
@@ -92,7 +101,7 @@
                                         </button>
                                     </form>
                                 </div>
-                            
+
                             @php
                                 $r = $review->replies;
                                 $replyCount = $r->count();
