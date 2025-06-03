@@ -211,6 +211,14 @@ body {
 .back-arrow {
   margin-right: 5px;
 }
+.login-link {
+  color: #1a75ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.login-link:hover {
+  text-decoration: underline;
+}
 .alert {
   padding: 15px;
   border-radius: 10px;
