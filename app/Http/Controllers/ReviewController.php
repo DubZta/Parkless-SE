@@ -88,7 +88,7 @@ class ReviewController extends Controller
     }
 
     public function store(Request $request) {
-        $userId = 1;
+        $userId = auth()->id();
 
         Review::create([
             'user_id' => $userId,
@@ -101,7 +101,7 @@ class ReviewController extends Controller
     }
 
     public function vote(Request $request, $reviewId) {
-        $userId = 1;
+        $userId = auth()->id();
 
         $voteValue = $request->input('vote');
 

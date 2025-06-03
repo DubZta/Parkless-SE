@@ -131,16 +131,13 @@ function processStoreData(userLat, userLon, brand, layer) {
 function addMarker(feature, layer, distance) {
     var [lon, lat] = feature.geometry.coordinates;
     var name = feature.properties.name || feature.properties.brand;
-    var parking = feature.properties.has_parking_attendant
-        ? "Ada tukang parkir"
-        : "Tidak ada tukang parkir";
 
     const placeID = parseInt(feature.id.split("/")[1]);
 
     L.marker([lat, lon])
         .addTo(layer)
         .bindPopup(
-            `<b>${name}</b><br>${parking}<br>Jarak: ${distance.toFixed(
+            `<b>${name}</b></span><br>Jarak: ${distance.toFixed(
                 2
             )} km<br><a href='/review/${encodeURIComponent(
                 placeID

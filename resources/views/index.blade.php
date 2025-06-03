@@ -5,27 +5,6 @@
     <title>Parkless</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" />
-    </noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body class="is-preload">
-    @auth
-    <form method="POST" action="{{ route('logout') }}" style="position: fixed; top: 2rem; right: 2rem; z-index: 1000; display: inline;">
-        @csrf
-        <button type="submit" class="logout-btn-top-right button">Log Out</button>
-    </form>
-    @endauth
-    @guest
-    <form method="GET" action="{{ route('parklessLogin') }}" style="position: fixed; top: 2rem; right: 2rem; z-index: 1000; display: inline;">
-        <button type="submit" class="login-btn-top-right button">Login</button>
-    </form>
-    @endguest
     <style>
         .dashboard-btn-top-left {
             position: fixed;
@@ -44,10 +23,6 @@
             border-radius: 8px;
             transition: background 0.2s, color 0.2s;
             padding: 0 2rem;
-        }
-        .dashboard-btn-top-left:hover {
-            background: #fff;
-            color: #222;
         }
         .login-btn-top-right, .logout-btn-top-right {
             position: fixed;
@@ -72,6 +47,28 @@
             color: #fff;
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" />
+    </noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="is-preload">
+    @auth
+    <span class="dashboard-btn-top-left">Welcome, {{auth()->user()->username}}</span>
+    <form method="POST" action="{{ route('logout') }}" style="position: fixed; top: 2rem; right: 2rem; z-index: 1000; display: inline;">
+        @csrf
+        <button type="submit" class="logout-btn-top-right button">Log Out</button>
+    </form>
+    @endauth
+    @guest
+    <form method="GET" action="{{ route('parklessLogin') }}" style="position: fixed; top: 2rem; right: 2rem; z-index: 1000; display: inline;">
+        <button type="submit" class="login-btn-top-right button">Login</button>
+    </form>
+    @endguest
 
     <!-- Wrapper -->
     <div id="content">
@@ -90,7 +87,7 @@
 
                 <nav>
                     <ul>
-                        <li><a href="#intro">test</a></li>
+                        <li><a href="#intro">About Us</a></li>
                         <li><a href="#work">Features</a></li>
                         <li><a href="#about">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>

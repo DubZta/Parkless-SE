@@ -37,6 +37,7 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
+        @auth
         <div class="row mt-4">
             {{-- Formulir Tulis Review --}}
             <div class="col-md-4">
@@ -125,7 +126,9 @@
                 </div>
             </div>
         </div>
-
+        @else
+            <p class="alert alert-success">Login untuk lihat dan tulis review</p>
+        @endauth
 
         {{-- <div class="w-75 mx-auto my-5">
         @forelse($reviews as $review)
