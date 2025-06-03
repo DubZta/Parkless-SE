@@ -6,10 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parkless Login</title>
     <link rel="stylesheet" href="{{ asset('stylelogin.css') }}">
+    <style>
+        .back-to-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #1a75ff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        .back-to-home:hover {
+            text-decoration: underline;
+        }
+        .back-arrow {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="wrapper">
+        <a href="{{ route('index') }}" class="back-to-home">
+            <span class="back-arrow">←</span> Back to Home
+        </a>
         <div class="title-text">
             <div class="title login">Login Form</div>
             <div class="title signup">Sign Up Form</div>
