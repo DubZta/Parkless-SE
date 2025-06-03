@@ -35,13 +35,16 @@ Follow these steps to set up and run the application locally:
 ### Installation
 
 # 1. Clone the repository
+
 git clone https://github.com/DubZta/Parkless-SE.git
 cd Parkless-SE
 
 # 2. Install PHP dependencies
+
 composer install
 
 # 3. Copy environment file and generate app key
+
 cp .env.example .env
 php artisan key:generate
 
@@ -49,7 +52,9 @@ php artisan key:generate
 # (DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 
 # 5. Run migrations and seeders
+
 php artisan migrate:fresh --seed
 
 # 6. Serve the application
+
 php artisan serve
