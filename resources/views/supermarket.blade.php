@@ -116,7 +116,16 @@
                                 <div class="replies-container d-none" id="replies-{{ $review->id }}">
                                     @foreach ($r as $reply)
                                         <div class="review-item">
-                                            <div class="review-user">{{ $reply->user->username }}</div>
+                                            <div class="review-header">
+                                                <div class="review-user">{{ $review->user->username }}</div>
+                                                @if (auth()->user()->is_admin)
+                                                    <form action="/review/{{ $review->id }}" method="POST" onsubmit="return confirm('Yakin ingin hapus review ini?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="delete-button">X</button>
+                                                    </form>
+                                                @endif
+                                            </div>
                                             <div class="review-content">{{ $reply->content }}</div>
                                             <form method="POST" action="/review/{{ $reply->id }}/vote" class="vote-form">
                                                 @csrf

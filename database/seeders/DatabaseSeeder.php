@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             SupermarketSeeder::class,
-            ReviewSeeder::class,
-            ReviewVotesSeeder::class
+            // ReviewSeeder::class,
+            // ReviewVotesSeeder::class
         ]);
     }
 }

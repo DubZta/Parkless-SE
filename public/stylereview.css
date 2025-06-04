@@ -18,7 +18,7 @@ body {
     color: #fff;
 }
 .container {
-    max-width: 1000px;
+    min-width: 75%;
     padding: 20px;
 }
 .wrapper {
@@ -69,6 +69,7 @@ body {
     background: #28a745;
 }
 .review-container {
+    min-width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
