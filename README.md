@@ -40,18 +40,18 @@ git clone https://github.com/DubZta/Parkless-SE.git
 
 cd Parkless-SE
 
-# 3. Setting Up The Database
+# 2. Setting Up The Database
 
 Run XAMPP Control Panel then enable Apache & MySQL 
 
-# 4. Generate app key
+# 3. Generate app key
 
 php artisan key:generate
 
-# 5. Run migrations and seeders
+# 4. Run migrations and seeders
 
 php artisan migrate:fresh --seed
 
-# 6. Serve the application
+# 5. Serve the application
 
 php artisan serve
