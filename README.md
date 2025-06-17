@@ -26,7 +26,7 @@ Follow these steps to set up and run the application locally:
 
 ### Requirements
 
-- PHP >= 8.0
+- XAMPP Control Panel
 - Composer
 - Node.js & npm
 - MySQL or compatible database
@@ -40,19 +40,13 @@ git clone https://github.com/DubZta/Parkless-SE.git
 
 cd Parkless-SE
 
-# 2. Install PHP dependencies
+# 3. Setting Up The Database
 
-composer install
+Run XAMPP Control Panel then enable Apache & MySQL 
 
-# 3. Copy environment file and generate app key
-
-cp .env.example .env
+# 4. Generate app key
 
 php artisan key:generate
-
-# 4. Set up your database configuration in the .env file
-
-(DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 
 # 5. Run migrations and seeders
 
